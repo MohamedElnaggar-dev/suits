@@ -36,8 +36,36 @@ class AppStyles {
     );
   }
 
-  static TextStyle semiBold({
+  static TextStyle semiBold16({
     double fontSize = AppDimensions.medium,
+    Color color = Colors.black,
+    TextDecoration? textDecoration,
+  }) {
+    return TextStyle(
+      fontFamily: appFont,
+      fontWeight: FontWeight.w600,
+      fontSize: fontSize,
+      color: color,
+      decoration: textDecoration,
+    );
+  }
+
+  static TextStyle semiBold18({
+    double fontSize = AppDimensions.large,
+    Color color = Colors.black,
+    TextDecoration? textDecoration,
+  }) {
+    return TextStyle(
+      fontFamily: appFont,
+      fontWeight: FontWeight.w600,
+      fontSize: fontSize,
+      color: color,
+      decoration: textDecoration,
+    );
+  }
+
+  static TextStyle semiBold20({
+    double fontSize = AppDimensions.xLarge,
     Color color = Colors.black,
     TextDecoration? textDecoration,
   }) {

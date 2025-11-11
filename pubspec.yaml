@@ -75,8 +75,9 @@ flutter:
           weight: 700
 
 flutter_assets:
-  assets_path: assets/svgs/
+  assets_path:
+    - assets/svgs/
+    - assets/images/
   output_path: lib/core/utils/constants/
   filename: app_assets.dart
-  field_prefix:
-  ignore_comments: true
+  field_prefix: 

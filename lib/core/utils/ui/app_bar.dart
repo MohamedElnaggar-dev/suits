@@ -1,0 +1,42 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:flutter/material.dart';
+
+import 'package:suits_app/core/utils/constants/app_styles.dart';
+
+class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
+  final String? title;
+  final bool centerTitle;
+  final List<Widget>? actions;
+  final bool isLeading;
+
+  const CustomAppBar({
+    super.key,
+    this.title,
+    this.centerTitle = true,
+    this.actions,
+    required this.isLeading,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return AppBar(
+      title: Text(
+        title ?? '',
+        style: AppStyles.semiBold20(color: Colors.black),
+      ),
+      centerTitle: centerTitle,
+      leading: isLeading == true
+          ? GestureDetector(
+              onTap: () => Navigator.pop(context),
+              child: Icon(Icons.arrow_back_ios, color: Colors.black),
+            )
+          : null,
+      actions: actions,
+      backgroundColor: Colors.transparent,
+      elevation: 0,
+    );
+  }
+
+  @override
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
+}

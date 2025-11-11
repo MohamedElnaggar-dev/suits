@@ -13,9 +13,9 @@ class SplashContent extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          SvgPicture.asset(Assets.assetsSvgsLogo),
+          SvgPicture.asset(Assets.svgsLogo),
           const SizedBox(width: 10),
-          SvgPicture.asset(Assets.assetsSvgsLogoTitle),
+          SvgPicture.asset(Assets.svgsLogoTitle),
         ],
       ),
     );

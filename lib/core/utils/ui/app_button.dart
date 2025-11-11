@@ -38,7 +38,7 @@ class AppButton extends StatelessWidget {
           child: Center(
             child: isLoading
                 ? const CircularProgressIndicator(color: Colors.white)
-                : Text(text, style: AppStyles.semiBold(color: Colors.white)),
+                : Text(text, style: AppStyles.semiBold16(color: Colors.white)),
           ),
         ),
       ),
