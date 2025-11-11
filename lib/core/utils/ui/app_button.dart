@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:suits_app/core/utils/constants/app_colors.dart';
 import 'package:suits_app/core/utils/constants/app_dimensions.dart';
+import 'package:suits_app/core/utils/constants/app_styles.dart';
 
 class AppButton extends StatelessWidget {
   const AppButton({
@@ -37,15 +38,7 @@ class AppButton extends StatelessWidget {
           child: Center(
             child: isLoading
                 ? const CircularProgressIndicator(color: Colors.white)
-                : Text(
-                    text,
-                    style: const TextStyle(
-                      color: Colors.white,
-                      fontSize: AppDimensions.medium,
-                      fontFamily: 'Montserrat',
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
+                : Text(text, style: AppStyles.semiBold(color: Colors.white)),
           ),
         ),
       ),

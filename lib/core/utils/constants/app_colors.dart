@@ -4,6 +4,7 @@ class AppColors {
   AppColors._();
 
   static const Color primaryColor = Color(0xffDD8560);
+  static const Color secondSplashColor = Color(0xff676767);
   static const Color backgroundColor = Color(0xffF1F2F4);
   static const Color textColor = Color(0xff000000);
   static const Color descriptionTextColor = Color(0xff727272);
