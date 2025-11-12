@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:suits_app/core/utils/constants/app_colors.dart';
+import 'package:suits_app/core/utils/router/app_routes.dart';
 import 'package:suits_app/features/splash/presentation/widgets/splash_content.dart';
 
 class SplashView extends StatefulWidget {
@@ -17,6 +19,10 @@ class _SplashViewState extends State<SplashView> {
     super.initState();
     Future.delayed(const Duration(seconds: 2), () {
       setState(() => showSecond = true);
+      Future.delayed(const Duration(seconds: 1), () {
+        // ignore: use_build_context_synchronously
+        if (context.mounted) context.go(AppRouter.kOnboardingView);
+      });
     });
   }
 

@@ -1,12 +1,23 @@
 import 'package:go_router/go_router.dart';
+import 'package:suits_app/features/get_started/presentation/view/get_started_view.dart';
+import 'package:suits_app/features/onboarding/presentation/view/onboarding_view.dart';
 import 'package:suits_app/features/splash/presentation/view/splash_view.dart';
 
 abstract class AppRouter {
-  // static const kSigninEmailView = '/signinEmailView';
+  static const kOnboardingView = '/onboardingView';
+  static const kGetStartedView = '/getStartedView';
 
   static final router = GoRouter(
     routes: [
       GoRoute(path: '/', builder: (context, state) => const SplashView()),
+      GoRoute(
+        path: '/onboardingView',
+        builder: (context, state) => const OnboardingView(),
+      ),
+      GoRoute(
+        path: '/getStartedView',
+        builder: (context, state) => const GetStartedView(),
+      ),
     ],
   );
 }

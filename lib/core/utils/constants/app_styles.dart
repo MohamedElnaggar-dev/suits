@@ -6,7 +6,21 @@ class AppStyles {
 
   static String appFont = 'montserrat';
 
-  static TextStyle reguler({
+  static TextStyle reguler14({
+    double fontSize = AppDimensions.small,
+    Color color = Colors.white,
+    TextDecoration? textDecoration,
+  }) {
+    return TextStyle(
+      fontFamily: appFont,
+      fontWeight: FontWeight.w400,
+      fontSize: fontSize,
+      color: color,
+      decoration: textDecoration,
+    );
+  }
+
+  static TextStyle reguler16({
     double fontSize = AppDimensions.medium,
     Color color = Colors.black,
     TextDecoration? textDecoration,
@@ -78,9 +92,23 @@ class AppStyles {
     );
   }
 
-  static TextStyle bold({
+  static TextStyle bold16({
     double fontSize = AppDimensions.medium,
     Color color = Colors.black,
+    TextDecoration? textDecoration,
+  }) {
+    return TextStyle(
+      fontFamily: appFont,
+      fontWeight: FontWeight.w700,
+      fontSize: fontSize,
+      color: color,
+      decoration: textDecoration,
+    );
+  }
+
+  static TextStyle bold36({
+    double fontSize = 36,
+    Color color = Colors.white,
     TextDecoration? textDecoration,
   }) {
     return TextStyle(
