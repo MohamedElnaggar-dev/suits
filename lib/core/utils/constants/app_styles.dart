@@ -106,6 +106,20 @@ class AppStyles {
     );
   }
 
+  static TextStyle bold20({
+    double fontSize = AppDimensions.xLarge,
+    Color color = Colors.black,
+    TextDecoration? textDecoration,
+  }) {
+    return TextStyle(
+      fontFamily: appFont,
+      fontWeight: FontWeight.w700,
+      fontSize: fontSize,
+      color: color,
+      decoration: textDecoration,
+    );
+  }
+
   static TextStyle bold36({
     double fontSize = 36,
     Color color = Colors.white,

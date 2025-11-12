@@ -20,8 +20,8 @@ class AppDimensions {
   static const double largeBorderRadius = 24;
 
   static const EdgeInsets pagePadding = EdgeInsets.symmetric(
-    horizontal: AppPadding.xLarge,
-    vertical: AppPadding.xLarge,
+    horizontal: AppPadding.large,
+    vertical: AppPadding.large,
   );
 }
 
@@ -29,9 +29,10 @@ class AppPadding {
   static const double xsmall = 4;
   static const double small = 8;
   static const double medium = 16;
-  static const double large = 20;
-  static const double xLarge = 24;
-  static const double xxLarge = 28;
+  static const double large = 18;
+  static const double xLarge = 20;
+  static const double xxLarge = 24;
+  static const double xxxLarge = 28;
 
   static const double smallDisplay = 30;
   static const double mediumDisplay = 36;

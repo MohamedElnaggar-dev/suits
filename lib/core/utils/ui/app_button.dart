@@ -21,7 +21,7 @@ class AppButton extends StatelessWidget {
         onTap: isLoading ? null : onTap,
         borderRadius: BorderRadius.circular(32),
         child: Container(
-          height: 56,
+          height: AppDimensions.buttonHeight,
 
           padding: const EdgeInsets.symmetric(
             vertical: AppPadding.medium,
