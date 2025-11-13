@@ -47,7 +47,7 @@ class LoginView extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(height: AppDimensions.medium),
+            const SizedBox(height: 34),
 
             AppButton(onTap: () {}, text: 'Login'),
             const SizedBox(height: AppDimensions.medium),
@@ -72,7 +72,7 @@ class LoginView extends StatelessWidget {
             ),
             SizedBox(height: AppDimensions.medium),
             CustomDivider(),
-            SizedBox(height: AppDimensions.medium),
+            SizedBox(height: 30),
 
             CustomLoginWithAccouts(
               image: Assets.imagesGoogle,
