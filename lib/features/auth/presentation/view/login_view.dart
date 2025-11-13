@@ -3,6 +3,8 @@ import 'package:suits_app/core/utils/constants/app_colors.dart';
 import 'package:suits_app/core/utils/constants/app_dimensions.dart';
 import 'package:suits_app/core/utils/constants/app_styles.dart';
 import 'package:suits_app/core/utils/ui/app_bar.dart';
+import 'package:suits_app/features/auth/presentation/widgets/custom_email_text_field.dart';
+import 'package:suits_app/features/auth/presentation/widgets/custom_password_text_field.dart';
 
 class LoginView extends StatelessWidget {
   const LoginView({super.key});
@@ -23,6 +25,9 @@ class LoginView extends StatelessWidget {
               ),
             ),
             const SizedBox(height: AppDimensions.medium),
+            const CustomEmailTextField(),
+            const SizedBox(height: AppDimensions.medium),
+            CustomPasswordTextField(),
           ],
         ),
       ),
