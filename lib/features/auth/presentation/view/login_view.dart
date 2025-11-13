@@ -5,6 +5,7 @@ import 'package:suits_app/core/utils/constants/app_dimensions.dart';
 import 'package:suits_app/core/utils/constants/app_styles.dart';
 import 'package:suits_app/core/utils/ui/app_bar.dart';
 import 'package:suits_app/core/utils/ui/app_button.dart';
+import 'package:suits_app/features/auth/presentation/widgets/custom_divider.dart';
 import 'package:suits_app/features/auth/presentation/widgets/custom_email_text_field.dart';
 import 'package:suits_app/features/auth/presentation/widgets/custom_password_text_field.dart';
 
@@ -61,7 +62,8 @@ class LoginView extends StatelessWidget {
                 ],
               ),
             ),
-
+            SizedBox(height: AppDimensions.medium),
+            CustomDivider(),
             const Spacer(),
             AppButton(onTap: () {}, text: 'Login'),
             const Spacer(),

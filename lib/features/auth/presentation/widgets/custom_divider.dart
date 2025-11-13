@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:suits_app/core/utils/constants/app_colors.dart';
+import 'package:suits_app/core/utils/constants/app_styles.dart';
 
 class CustomDivider extends StatelessWidget {
   const CustomDivider({super.key});
@@ -6,20 +8,17 @@ class CustomDivider extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Stack(
+      alignment: Alignment.center,
       children: [
-        const Divider(thickness: 2),
-        Center(
-          child: Container(
-            height: 30,
-            width: 40,
-            decoration: BoxDecoration(
-              color: Theme.of(context).scaffoldBackgroundColor,
-            ),
-            child: const Center(
-              child: Text(
-                'أو',
-                style: TextStyle(fontFamily: 'Cairo', fontSize: 20),
-              ),
+        const Divider(thickness: 0.5),
+        Container(
+          color: Colors.transparent,
+          padding: const EdgeInsets.symmetric(horizontal: 8),
+          child: Text(
+            'OR',
+            style: AppStyles.reguler(
+              fontSize: 20,
+              color: AppColors.hintTextColor,
             ),
           ),
         ),
