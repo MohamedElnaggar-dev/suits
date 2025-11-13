@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:suits_app/core/utils/constants/app_assets.dart';
 import 'package:suits_app/core/utils/constants/app_colors.dart';
 import 'package:suits_app/core/utils/constants/app_dimensions.dart';
 import 'package:suits_app/core/utils/constants/app_styles.dart';
@@ -7,6 +8,7 @@ import 'package:suits_app/core/utils/ui/app_bar.dart';
 import 'package:suits_app/core/utils/ui/app_button.dart';
 import 'package:suits_app/features/auth/presentation/widgets/custom_divider.dart';
 import 'package:suits_app/features/auth/presentation/widgets/custom_email_text_field.dart';
+import 'package:suits_app/features/auth/presentation/widgets/custom_login_with_accouts.dart';
 import 'package:suits_app/features/auth/presentation/widgets/custom_password_text_field.dart';
 
 class LoginView extends StatelessWidget {
@@ -24,7 +26,7 @@ class LoginView extends StatelessWidget {
             Center(
               child: Text(
                 'Hi Welcome back, you’ve been missed',
-                style: AppStyles.semiBold16(),
+                style: AppStyles.semiBold(fontSize: 16),
               ),
             ),
             const SizedBox(height: AppDimensions.medium),
@@ -38,10 +40,16 @@ class LoginView extends StatelessWidget {
                 alignment: Alignment.centerRight,
                 child: Text(
                   'Forgot Password?',
-                  style: AppStyles.semiBold16(color: AppColors.primaryColor),
+                  style: AppStyles.semiBold(
+                    fontSize: 16,
+                    color: AppColors.primaryColor,
+                  ),
                 ),
               ),
             ),
+            const SizedBox(height: AppDimensions.medium),
+
+            AppButton(onTap: () {}, text: 'Login'),
             const SizedBox(height: AppDimensions.medium),
             Text.rich(
               TextSpan(
@@ -64,9 +72,23 @@ class LoginView extends StatelessWidget {
             ),
             SizedBox(height: AppDimensions.medium),
             CustomDivider(),
-            const Spacer(),
-            AppButton(onTap: () {}, text: 'Login'),
-            const Spacer(),
+            SizedBox(height: AppDimensions.medium),
+
+            CustomLoginWithAccouts(
+              image: Assets.imagesGoogle,
+              text: 'Sign in with google',
+            ),
+            SizedBox(height: AppDimensions.medium),
+            CustomLoginWithAccouts(
+              image: Assets.imagesAppleLogo,
+              text: 'Sign in with Apple',
+            ),
+            SizedBox(height: AppDimensions.medium),
+
+            CustomLoginWithAccouts(
+              image: Assets.imagesFacebook,
+              text: 'Sign in with Facebook',
+            ),
           ],
         ),
       ),

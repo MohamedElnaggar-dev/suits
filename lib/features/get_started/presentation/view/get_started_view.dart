@@ -75,7 +75,10 @@ class GetStartedView extends StatelessWidget {
                   SizedBox(height: AppDimensions.xxxLarge),
                   Text(
                     'Everything you need in the world\n      of fashion, old and new',
-                    style: AppStyles.semiBold16(color: Color(0xff727272)),
+                    style: AppStyles.semiBold(
+                      fontSize: 16,
+                      color: Color(0xff727272),
+                    ),
                   ),
                   SizedBox(height: 61),
                   AppButton(
@@ -98,7 +101,7 @@ class GetStartedView extends StatelessWidget {
     return RichText(
       textAlign: TextAlign.center,
       text: TextSpan(
-        style: AppStyles.bold20(),
+        style: AppStyles.bold(fontSize: 20),
         children: [
           TextSpan(text: 'The '),
           TextSpan(

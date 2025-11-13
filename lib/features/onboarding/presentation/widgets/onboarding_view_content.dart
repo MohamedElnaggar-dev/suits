@@ -23,7 +23,7 @@ class OnboardingViewContent extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.end,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(headText, style: AppStyles.bold36()),
+            Text(headText, style: AppStyles.bold(fontSize: 36)),
             const SizedBox(height: 10),
             Text(descText, style: AppStyles.reguler(fontSize: 14)),
             const SizedBox(height: 150),

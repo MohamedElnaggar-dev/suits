@@ -22,7 +22,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       title: Text(
         title ?? '',
-        style: AppStyles.semiBold20(color: Colors.black),
+        style: AppStyles.semiBold(color: Colors.black, fontSize: 20),
       ),
       centerTitle: centerTitle,
       leading: isLeading == true

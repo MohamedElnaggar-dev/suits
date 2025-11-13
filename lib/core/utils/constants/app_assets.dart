@@ -2,9 +2,17 @@
 class Assets {
   Assets._();
   
+  /// Assets for imagesAppleLogo
+  /// assets/images/apple_logo.png
+  static const String imagesAppleLogo = "assets/images/apple_logo.png";
+
   /// Assets for imagesEmail
   /// assets/images/email.png
   static const String imagesEmail = "assets/images/email.png";
+
+  /// Assets for imagesFacebook
+  /// assets/images/facebook.png
+  static const String imagesFacebook = "assets/images/facebook.png";
 
   /// Assets for imagesFirstGetStartedImage
   /// assets/images/first_get_started_image.png
@@ -13,6 +21,10 @@ class Assets {
   /// Assets for imagesFirstOnboardingBackground
   /// assets/images/first_onboarding_background.jpg
   static const String imagesFirstOnboardingBackground = "assets/images/first_onboarding_background.jpg";
+
+  /// Assets for imagesGoogle
+  /// assets/images/google.png
+  static const String imagesGoogle = "assets/images/google.png";
 
   /// Assets for imagesHidePassword
   /// assets/images/hide_password.png
