@@ -11,7 +11,7 @@ class AppColors {
   static const Color descriptionTextColor = Color(0xff727272);
   static const Color errorTextColor = Color(0xffFE0000);
   static const Color hintTextColor = Color(0xffA1A8B0);
-  static const Color borderColor = Color(0xffE6E6E6);
+  static const Color borderColor = Color(0xffE5E7EB);
   static const Color errorBorderColor = Color(0xffF40000);
   static const List<Color> primaryGradientColors = [
     Color(0xffDD8560),

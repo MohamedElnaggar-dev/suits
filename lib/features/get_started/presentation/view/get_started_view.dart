@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:suits_app/core/utils/constants/app_assets.dart';
 import 'package:suits_app/core/utils/constants/app_colors.dart';
 import 'package:suits_app/core/utils/constants/app_dimensions.dart';
 import 'package:suits_app/core/utils/constants/app_styles.dart';
+import 'package:suits_app/core/utils/router/app_routes.dart';
 import 'package:suits_app/core/utils/ui/app_button.dart';
 
 class GetStartedView extends StatelessWidget {
@@ -76,7 +78,12 @@ class GetStartedView extends StatelessWidget {
                     style: AppStyles.semiBold16(color: Color(0xff727272)),
                   ),
                   SizedBox(height: 61),
-                  AppButton(text: 'Get Started', onTap: () {}),
+                  AppButton(
+                    text: 'Get Started',
+                    onTap: () {
+                      context.push(AppRouter.kLoginView);
+                    },
+                  ),
                   SizedBox(height: 30),
                 ],
               ),
