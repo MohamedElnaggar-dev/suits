@@ -1,8 +1,10 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:suits_app/core/utils/constants/app_colors.dart';
 import 'package:suits_app/core/utils/constants/app_dimensions.dart';
 import 'package:suits_app/core/utils/constants/app_styles.dart';
 import 'package:suits_app/core/utils/ui/app_bar.dart';
+import 'package:suits_app/core/utils/ui/app_button.dart';
 import 'package:suits_app/features/auth/presentation/widgets/custom_email_text_field.dart';
 import 'package:suits_app/features/auth/presentation/widgets/custom_password_text_field.dart';
 
@@ -28,6 +30,41 @@ class LoginView extends StatelessWidget {
             const CustomEmailTextField(),
             const SizedBox(height: AppDimensions.medium),
             CustomPasswordTextField(),
+            const SizedBox(height: AppDimensions.small),
+            GestureDetector(
+              onTap: () {},
+              child: Align(
+                alignment: Alignment.centerRight,
+                child: Text(
+                  'Forgot Password?',
+                  style: AppStyles.semiBold16(color: AppColors.primaryColor),
+                ),
+              ),
+            ),
+            const SizedBox(height: AppDimensions.medium),
+            Text.rich(
+              TextSpan(
+                text: "Don't have an account? ",
+                style: AppStyles.reguler(color: Colors.black, fontSize: 16),
+                children: [
+                  TextSpan(
+                    text: "Sign Up",
+                    style: AppStyles.reguler(
+                      color: AppColors.primaryColor,
+                      fontSize: 16,
+                    ),
+                    recognizer: TapGestureRecognizer()
+                      ..onTap = () {
+                        // action here
+                      },
+                  ),
+                ],
+              ),
+            ),
+
+            const Spacer(),
+            AppButton(onTap: () {}, text: 'Login'),
+            const Spacer(),
           ],
         ),
       ),

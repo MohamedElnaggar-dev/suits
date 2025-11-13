@@ -6,23 +6,9 @@ class AppStyles {
 
   static String appFont = 'montserrat';
 
-  static TextStyle reguler14({
+  static TextStyle reguler({
     double fontSize = AppDimensions.small,
     Color color = Colors.white,
-    TextDecoration? textDecoration,
-  }) {
-    return TextStyle(
-      fontFamily: appFont,
-      fontWeight: FontWeight.w400,
-      fontSize: fontSize,
-      color: color,
-      decoration: textDecoration,
-    );
-  }
-
-  static TextStyle reguler16({
-    double fontSize = AppDimensions.medium,
-    Color color = Colors.black,
     TextDecoration? textDecoration,
   }) {
     return TextStyle(

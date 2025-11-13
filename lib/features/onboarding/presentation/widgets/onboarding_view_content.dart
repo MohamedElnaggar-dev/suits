@@ -25,7 +25,7 @@ class OnboardingViewContent extends StatelessWidget {
           children: [
             Text(headText, style: AppStyles.bold36()),
             const SizedBox(height: 10),
-            Text(descText, style: AppStyles.reguler14()),
+            Text(descText, style: AppStyles.reguler(fontSize: 14)),
             const SizedBox(height: 150),
           ],
         ),
