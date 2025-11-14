@@ -58,6 +58,10 @@ class Assets {
   /// assets/images/third_onboarding_background.jpg
   static const String imagesThirdOnboardingBackground = "assets/images/third_onboarding_background.jpg";
 
+  /// Assets for imagesUserIcon
+  /// assets/images/user_icon.png
+  static const String imagesUserIcon = "assets/images/user_icon.png";
+
   /// Assets for svgsEmail
   /// assets/svgs/email.svg
   static const String svgsEmail = "assets/svgs/email.svg";

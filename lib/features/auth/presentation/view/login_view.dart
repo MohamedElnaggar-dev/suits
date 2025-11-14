@@ -1,9 +1,11 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:suits_app/core/utils/constants/app_assets.dart';
 import 'package:suits_app/core/utils/constants/app_colors.dart';
 import 'package:suits_app/core/utils/constants/app_dimensions.dart';
 import 'package:suits_app/core/utils/constants/app_styles.dart';
+import 'package:suits_app/core/utils/router/app_routes.dart';
 import 'package:suits_app/core/utils/ui/app_bar.dart';
 import 'package:suits_app/core/utils/ui/app_button.dart';
 import 'package:suits_app/features/auth/presentation/widgets/custom_divider.dart';
@@ -64,7 +66,7 @@ class LoginView extends StatelessWidget {
                     ),
                     recognizer: TapGestureRecognizer()
                       ..onTap = () {
-                        // action here
+                        context.push(AppRouter.kSignupView);
                       },
                   ),
                 ],
