@@ -26,7 +26,7 @@ class _TermsAndConditionsState extends State<TermsAndConditions> {
             setState(() {});
           },
         ),
-        const SizedBox(width: 8), // مسافة صغيرة
+        const SizedBox(width: 8),
         const Expanded(
           child: CustomText(
             blackText: 'I agree to the medidoc ',

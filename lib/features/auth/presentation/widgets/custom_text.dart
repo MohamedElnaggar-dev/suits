@@ -17,7 +17,7 @@ class CustomText extends StatelessWidget {
   Widget build(BuildContext context) {
     return RichText(
       text: TextSpan(
-        style: AppStyles.reguler(),
+        style: AppStyles.reguler(color: Colors.black),
         children: [
           TextSpan(text: blackText),
           TextSpan(
