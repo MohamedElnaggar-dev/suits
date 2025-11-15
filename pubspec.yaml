@@ -38,6 +38,7 @@ dependencies:
   flutter_svg: ^2.2.2
   go_router: ^17.0.0
   smooth_page_indicator: ^1.2.1
+  pin_code_fields:
 
 dev_dependencies:
   flutter_test:

@@ -2,6 +2,7 @@ import 'package:go_router/go_router.dart';
 import 'package:suits_app/features/auth/presentation/view/forget_password_view.dart';
 import 'package:suits_app/features/auth/presentation/view/login_view.dart';
 import 'package:suits_app/features/auth/presentation/view/signup_view.dart';
+import 'package:suits_app/features/auth/presentation/view/verification_code_view.dart';
 import 'package:suits_app/features/get_started/presentation/view/get_started_view.dart';
 import 'package:suits_app/features/onboarding/presentation/view/onboarding_view.dart';
 import 'package:suits_app/features/splash/presentation/view/splash_view.dart';
@@ -12,6 +13,7 @@ abstract class AppRouter {
   static const kLoginView = '/loginView';
   static const kSignupView = '/signupView';
   static const kForgetPasswordView = '/forgetPasswordView';
+  static const kVerificationCodeView = '/verificationCodeView';
 
   static final router = GoRouter(
     routes: [
@@ -35,6 +37,10 @@ abstract class AppRouter {
       GoRoute(
         path: '/forgetPasswordView',
         builder: (context, state) => const ForgetPasswordView(),
+      ),
+      GoRoute(
+        path: '/verificationCodeView',
+        builder: (context, state) => const VerificationCodeView(),
       ),
     ],
   );
