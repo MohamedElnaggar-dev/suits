@@ -37,7 +37,7 @@ class LoginView extends StatelessWidget {
                 const SizedBox(height: AppDimensions.medium),
                 const CustomEmailTextField(),
                 const SizedBox(height: AppDimensions.medium),
-                CustomPasswordTextField(),
+                CustomPasswordTextField(hintText: 'Enter your Password'),
                 const SizedBox(height: AppDimensions.small),
                 GestureDetector(
                   onTap: () {

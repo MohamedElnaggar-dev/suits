@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:suits_app/core/utils/constants/app_colors.dart';
 import 'package:suits_app/core/utils/constants/app_dimensions.dart';
 import 'package:suits_app/core/utils/constants/app_styles.dart';
+import 'package:suits_app/core/utils/router/app_routes.dart';
 import 'package:suits_app/core/utils/ui/app_bar.dart';
 import 'package:suits_app/core/utils/ui/app_button.dart';
 import 'package:suits_app/features/auth/presentation/widgets/custom_pin_code_text_field.dart';
@@ -38,7 +40,12 @@ class VerificationCodeView extends StatelessWidget {
                 const SizedBox(height: AppDimensions.medium),
                 CustomPinCodeTextField(onChanged: (value) {}),
                 const SizedBox(height: 34),
-                AppButton(onTap: () {}, text: 'Verify'),
+                AppButton(
+                  onTap: () {
+                    context.push(AppRouter.kCreateNewPasswordView);
+                  },
+                  text: 'Verify',
+                ),
                 const SizedBox(height: AppDimensions.medium),
                 Center(
                   child: CustomText(

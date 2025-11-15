@@ -5,8 +5,13 @@ import 'package:suits_app/core/utils/constants/app_assets.dart';
 import 'package:suits_app/core/utils/ui/custom_text_field.dart';
 
 class CustomPasswordTextField extends StatefulWidget {
-  const CustomPasswordTextField({super.key, this.controller});
+  const CustomPasswordTextField({
+    super.key,
+    this.controller,
+    required this.hintText,
+  });
   final TextEditingController? controller;
+  final String hintText;
 
   @override
   State<CustomPasswordTextField> createState() =>
@@ -19,7 +24,7 @@ class _CustomPasswordTextFieldState extends State<CustomPasswordTextField> {
   Widget build(BuildContext context) {
     return CustomTextField(
       controller: widget.controller,
-      hintText: 'Enter your Password',
+      hintText: widget.hintText,
       prefixIcon: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
         child: Image.asset(Assets.imagesPassword, width: 24, height: 24),
