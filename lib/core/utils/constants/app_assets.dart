@@ -38,6 +38,10 @@ class Assets {
   /// assets/images/left_circle.png
   static const String imagesLeftCircle = "assets/images/left_circle.png";
 
+  /// Assets for imagesMenShoesIcon
+  /// assets/images/men_shoes_icon.png
+  static const String imagesMenShoesIcon = "assets/images/men_shoes_icon.png";
+
   /// Assets for imagesPassword
   /// assets/images/password.png
   static const String imagesPassword = "assets/images/password.png";
@@ -54,6 +58,14 @@ class Assets {
   /// assets/images/second_onboarding_background.jpg
   static const String imagesSecondOnboardingBackground = "assets/images/second_onboarding_background.jpg";
 
+  /// Assets for imagesShirtCategoryIcon
+  /// assets/images/shirt_category_icon.png
+  static const String imagesShirtCategoryIcon = "assets/images/shirt_category_icon.png";
+
+  /// Assets for imagesSuitCategoryIcon
+  /// assets/images/suit_category_icon.png
+  static const String imagesSuitCategoryIcon = "assets/images/suit_category_icon.png";
+
   /// Assets for imagesThirdGetStartedImage
   /// assets/images/third_get_started_image.png
   static const String imagesThirdGetStartedImage = "assets/images/third_get_started_image.png";
@@ -65,6 +77,10 @@ class Assets {
   /// Assets for imagesUserIcon
   /// assets/images/user_icon.png
   static const String imagesUserIcon = "assets/images/user_icon.png";
+
+  /// Assets for imagesWomenShoesIcon
+  /// assets/images/women_shoes_icon.png
+  static const String imagesWomenShoesIcon = "assets/images/women_shoes_icon.png";
 
   /// Assets for svgsChoosingClothes
   /// assets/svgs/choosing_clothes.svg
@@ -89,5 +105,13 @@ class Assets {
   /// Assets for svgsPassword
   /// assets/svgs/password.svg
   static const String svgsPassword = "assets/svgs/password.svg";
+
+  /// Assets for svgsShirtCategoryIcon
+  /// assets/svgs/shirt_category_icon.svg
+  static const String svgsShirtCategoryIcon = "assets/svgs/shirt_category_icon.svg";
+
+  /// Assets for svgsSuitCategoryIcon
+  /// assets/svgs/suit_category_icon.svg
+  static const String svgsSuitCategoryIcon = "assets/svgs/suit_category_icon.svg";
 }
 
