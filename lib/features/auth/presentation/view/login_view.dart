@@ -56,7 +56,12 @@ class LoginView extends StatelessWidget {
                 ),
                 const SizedBox(height: 34),
 
-                AppButton(onTap: () {}, text: 'Login'),
+                AppButton(
+                  onTap: () {
+                    context.push(AppRouter.kHomeView);
+                  },
+                  text: 'Login',
+                ),
                 const SizedBox(height: AppDimensions.medium),
                 Text.rich(
                   TextSpan(

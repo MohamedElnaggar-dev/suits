@@ -31,7 +31,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
               onTap: () => Navigator.pop(context),
               child: Icon(Icons.arrow_back_ios, color: Colors.black),
             )
-          : null,
+          : SizedBox.shrink(),
       actions: actions,
       backgroundColor: Colors.transparent,
       elevation: 0,
