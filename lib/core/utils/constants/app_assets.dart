@@ -78,6 +78,10 @@ class Assets {
   /// assets/images/shirt_category_icon.png
   static const String imagesShirtCategoryIcon = "assets/images/shirt_category_icon.png";
 
+  /// Assets for imagesStar
+  /// assets/images/star.png
+  static const String imagesStar = "assets/images/star.png";
+
   /// Assets for imagesSuitCategoryIcon
   /// assets/images/suit_category_icon.png
   static const String imagesSuitCategoryIcon = "assets/images/suit_category_icon.png";
@@ -125,6 +129,10 @@ class Assets {
   /// Assets for svgsShirtCategoryIcon
   /// assets/svgs/shirt_category_icon.svg
   static const String svgsShirtCategoryIcon = "assets/svgs/shirt_category_icon.svg";
+
+  /// Assets for svgsStar
+  /// assets/svgs/star.svg
+  static const String svgsStar = "assets/svgs/star.svg";
 
   /// Assets for svgsSuitCategoryIcon
   /// assets/svgs/suit_category_icon.svg
