@@ -7,6 +7,7 @@ import 'package:suits_app/features/auth/presentation/view/signup_view.dart';
 import 'package:suits_app/features/auth/presentation/view/verification_code_view.dart';
 import 'package:suits_app/features/get_started/presentation/view/get_started_view.dart';
 import 'package:suits_app/features/home/presentation/view/home_view.dart';
+import 'package:suits_app/features/home/presentation/view/product_details_view.dart';
 import 'package:suits_app/features/onboarding/presentation/view/onboarding_view.dart';
 import 'package:suits_app/features/splash/presentation/view/splash_view.dart';
 import 'package:suits_app/root.dart';
@@ -22,6 +23,7 @@ abstract class AppRouter {
   static const kHomeView = '/homeView';
   static const kExploreView = '/exploreView';
   static const kProfileView = '/profileView';
+  static const kProductDetailsView = '/productDetailsView';
   static final _rootNavigatorKey = GlobalKey<NavigatorState>();
   static final _shellNavigatorKey = GlobalKey<NavigatorState>(
     debugLabel: 'shell',
@@ -54,6 +56,10 @@ abstract class AppRouter {
       GoRoute(
         path: kCreateNewPasswordView,
         builder: (context, state) => const CreateNewPasswordView(),
+      ),
+      GoRoute(
+        path: kProductDetailsView,
+        builder: (context, state) => const ProductDetailsView(),
       ),
       StatefulShellRoute.indexedStack(
         builder: (context, state, navigationShell) {

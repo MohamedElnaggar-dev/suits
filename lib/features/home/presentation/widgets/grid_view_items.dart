@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:suits_app/core/utils/constants/app_assets.dart';
+import 'package:suits_app/core/utils/router/app_routes.dart';
 import 'package:suits_app/features/home/presentation/widgets/product_item.dart';
 
 class GridViewItems extends StatelessWidget {
@@ -24,25 +26,18 @@ class GridViewItems extends StatelessWidget {
       ),
       itemCount: images.length,
       itemBuilder: (context, index) {
-        return ProductItem(
-          image: images[index],
-          productName: 'Product Name',
-          price: '\$83.97',
-          rating: ' 4.5',
+        return GestureDetector(
+          onTap: () {
+            context.push(AppRouter.kProductDetailsView);
+          },
+          child: ProductItem(
+            image: images[index],
+            productName: 'Product Name',
+            price: '\$83.97',
+            rating: ' 4.5',
+          ),
         );
       },
     );
   }
-
-  //   Container gridViewItem(List<String> images, int index) {
-  //     return Container(
-  //       decoration: BoxDecoration(
-  //         borderRadius: BorderRadius.circular(10),
-  //         image: DecorationImage(
-  //           image: AssetImage(images[index]),
-  //           fit: BoxFit.cover,
-  //         ),
-  //       ),
-  //     );
-  //   }
 }
