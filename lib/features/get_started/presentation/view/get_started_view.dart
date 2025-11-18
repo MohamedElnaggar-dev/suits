@@ -72,22 +72,22 @@ class GetStartedView extends StatelessWidget {
               child: Column(
                 children: [
                   _headText(),
-                  SizedBox(height: AppDimensions.xxxLarge),
+                  const SizedBox(height: AppDimensions.xxxLarge),
                   Text(
                     'Everything you need in the world\n      of fashion, old and new',
                     style: AppStyles.semiBold(
                       fontSize: 16,
-                      color: Color(0xff727272),
+                      color: const Color(0xff727272),
                     ),
                   ),
-                  SizedBox(height: 61),
+                  const SizedBox(height: 61),
                   AppButton(
                     text: 'Get Started',
                     onTap: () {
                       context.push(AppRouter.kLoginView);
                     },
                   ),
-                  SizedBox(height: 30),
+                  const SizedBox(height: 30),
                 ],
               ),
             ),
@@ -102,13 +102,13 @@ class GetStartedView extends StatelessWidget {
       textAlign: TextAlign.center,
       text: TextSpan(
         style: AppStyles.bold(fontSize: 20),
-        children: [
+        children: const [
           TextSpan(text: 'The '),
           TextSpan(
             text: 'Suits App ',
             style: TextStyle(color: AppColors.primaryColor),
           ),
-          const TextSpan(text: 'that\nMakes Your Look Your Best'),
+          TextSpan(text: 'that\nMakes Your Look Your Best'),
         ],
       ),
     );

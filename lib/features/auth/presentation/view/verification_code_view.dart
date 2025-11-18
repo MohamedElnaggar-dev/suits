@@ -18,7 +18,7 @@ class VerificationCodeView extends StatelessWidget {
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         backgroundColor: AppColors.scaffoldColor,
-        appBar: CustomAppBar(isLeading: true),
+        appBar: const CustomAppBar(isLeading: true),
         body: SingleChildScrollView(
           child: Padding(
             padding: AppDimensions.pagePadding,
@@ -47,7 +47,7 @@ class VerificationCodeView extends StatelessWidget {
                   text: 'Verify',
                 ),
                 const SizedBox(height: AppDimensions.medium),
-                Center(
+                const Center(
                   child: CustomText(
                     blackText: 'Didn’t receive the code?',
                     primaryColorText: ' Resend',

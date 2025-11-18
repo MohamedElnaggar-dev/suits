@@ -17,12 +17,12 @@ class AppButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
+      color: Colors.transparent,
       child: InkWell(
         onTap: isLoading ? null : onTap,
         borderRadius: BorderRadius.circular(32),
         child: Container(
           height: AppDimensions.buttonHeight,
-
           padding: const EdgeInsets.symmetric(
             vertical: AppPadding.medium,
             horizontal: AppPadding.small,

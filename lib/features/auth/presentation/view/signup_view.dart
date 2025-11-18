@@ -26,17 +26,17 @@ class _SignupViewState extends State<SignupView> {
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         backgroundColor: AppColors.scaffoldColor,
-        appBar: CustomAppBar(isLeading: true, title: 'Sign Up'),
+        appBar: const CustomAppBar(isLeading: true, title: 'Sign Up'),
         body: SingleChildScrollView(
           child: Padding(
             padding: AppDimensions.pagePadding,
             child: Column(
               children: [
-                CustomNameTextField(),
+                const CustomNameTextField(),
                 const SizedBox(height: AppDimensions.medium),
                 const CustomEmailTextField(),
                 const SizedBox(height: AppDimensions.medium),
-                CustomPasswordTextField(hintText: 'Enter your Password'),
+                const CustomPasswordTextField(hintText: 'Enter your Password'),
                 const SizedBox(height: AppDimensions.small),
                 TermsAndConditions(
                   changed: (value) {

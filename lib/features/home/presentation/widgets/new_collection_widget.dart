@@ -17,7 +17,7 @@ class NewCollectionWidget extends StatelessWidget {
         borderRadius: BorderRadius.circular(2),
       ),
       child: Padding(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -31,7 +31,7 @@ class NewCollectionWidget extends StatelessWidget {
                     color: AppColors.hintTextColor,
                   ),
                 ),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 Container(
                   height: 40,
                   width: 120,

@@ -22,7 +22,7 @@ class LoginView extends StatelessWidget {
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         backgroundColor: AppColors.scaffoldColor,
-        appBar: CustomAppBar(isLeading: true, title: 'Login'),
+        appBar: const CustomAppBar(isLeading: true, title: 'Login'),
         body: SingleChildScrollView(
           child: Padding(
             padding: AppDimensions.pagePadding,
@@ -37,7 +37,7 @@ class LoginView extends StatelessWidget {
                 const SizedBox(height: AppDimensions.medium),
                 const CustomEmailTextField(),
                 const SizedBox(height: AppDimensions.medium),
-                CustomPasswordTextField(hintText: 'Enter your Password'),
+                const CustomPasswordTextField(hintText: 'Enter your Password'),
                 const SizedBox(height: AppDimensions.small),
                 GestureDetector(
                   onTap: () {
@@ -56,15 +56,18 @@ class LoginView extends StatelessWidget {
                 ),
                 const SizedBox(height: 34),
 
-                AppButton(
-                  onTap: () {
-                    context.push(AppRouter.kHomeView);
-                  },
-                  text: 'Login',
+                SizedBox(
+                  width: double.infinity,
+                  child: AppButton(
+                    onTap: () {
+                      context.go(AppRouter.kHomeView);
+                    },
+                    text: 'Login',
+                  ),
                 ),
                 const SizedBox(height: AppDimensions.medium),
-                Text.rich(
-                  TextSpan(
+                RichText(
+                  text: TextSpan(
                     text: "Don't have an account? ",
                     style: AppStyles.reguler(color: Colors.black, fontSize: 16),
                     children: [
@@ -76,28 +79,29 @@ class LoginView extends StatelessWidget {
                         ),
                         recognizer: TapGestureRecognizer()
                           ..onTap = () {
-                            context.push(AppRouter.kSignupView);
+                            GoRouter.of(context).push(AppRouter.kSignupView);
                           },
                       ),
                     ],
                   ),
                 ),
-                SizedBox(height: AppDimensions.medium),
-                CustomDivider(),
-                SizedBox(height: 30),
 
-                CustomLoginWithAccouts(
+                const SizedBox(height: AppDimensions.medium),
+                const CustomDivider(),
+                const SizedBox(height: 30),
+
+                const CustomLoginWithAccouts(
                   image: Assets.imagesGoogle,
                   text: 'Sign in with google',
                 ),
-                SizedBox(height: AppDimensions.medium),
-                CustomLoginWithAccouts(
+                const SizedBox(height: AppDimensions.medium),
+                const CustomLoginWithAccouts(
                   image: Assets.imagesAppleLogo,
                   text: 'Sign in with Apple',
                 ),
-                SizedBox(height: AppDimensions.medium),
+                const SizedBox(height: AppDimensions.medium),
 
-                CustomLoginWithAccouts(
+                const CustomLoginWithAccouts(
                   image: Assets.imagesFacebook,
                   text: 'Sign in with Facebook',
                 ),

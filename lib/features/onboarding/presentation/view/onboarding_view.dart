@@ -32,18 +32,18 @@ class _OnboardingViewState extends State<OnboardingView> {
               });
             },
             controller: controller,
-            children: [
+            children: const [
               FirstOnboardingView(),
               SecondOnboardingView(),
               ThirdOnboardingView(),
             ],
           ),
           Container(
-            alignment: Alignment(0, 0.9),
+            alignment: const Alignment(0, 0.9),
             child: SmoothPageIndicator(
               controller: controller,
               count: 3,
-              effect: ColorTransitionEffect(
+              effect: const ColorTransitionEffect(
                 dotColor: Colors.white,
                 activeDotColor: AppColors.primaryColor,
               ),
@@ -55,8 +55,8 @@ class _OnboardingViewState extends State<OnboardingView> {
                 context.push(AppRouter.kGetStartedView);
               },
               child: Container(
-                alignment: Alignment(0.9, -0.87),
-                child: SkipButton(),
+                alignment: const Alignment(0.9, -0.87),
+                child: const SkipButton(),
               ),
             ),
           if (currentIndex != 0)
@@ -68,8 +68,8 @@ class _OnboardingViewState extends State<OnboardingView> {
                 );
               },
               child: Container(
-                alignment: Alignment(-0.92, 0.92),
-                child: RoutaionCircle(
+                alignment: const Alignment(-0.92, 0.92),
+                child: const RoutaionCircle(
                   circleColor: Colors.transparent,
                   iconColor: AppColors.primaryColor,
                   borderColor: Color(0xff4E6542),
@@ -89,8 +89,8 @@ class _OnboardingViewState extends State<OnboardingView> {
               }
             },
             child: Container(
-              alignment: Alignment(0.92, 0.92),
-              child: RoutaionCircle(
+              alignment: const Alignment(0.92, 0.92),
+              child: const RoutaionCircle(
                 circleColor: AppColors.primaryColor,
                 iconColor: Colors.white,
                 borderColor: Colors.transparent,

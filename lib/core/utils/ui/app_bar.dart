@@ -20,6 +20,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      automaticallyImplyLeading: false,
       surfaceTintColor: Colors.transparent,
       title: Text(
         title ?? '',
@@ -29,9 +30,9 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       leading: isLeading == true
           ? GestureDetector(
               onTap: () => Navigator.pop(context),
-              child: Icon(Icons.arrow_back_ios, color: Colors.black),
+              child: const Icon(Icons.arrow_back_ios, color: Colors.black),
             )
-          : SizedBox.shrink(),
+          : null,
       actions: actions,
       backgroundColor: Colors.transparent,
       elevation: 0,

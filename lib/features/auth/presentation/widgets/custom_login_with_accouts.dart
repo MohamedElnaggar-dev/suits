@@ -34,7 +34,7 @@ class CustomLoginWithAccouts extends StatelessWidget {
 
               child: Image.asset(image, width: 24, height: 24),
             ),
-            SizedBox(width: 24),
+            const SizedBox(width: 24),
             Text(text, style: AppStyles.semiBold(fontSize: 16)),
           ],
         ),

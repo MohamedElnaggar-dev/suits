@@ -4,6 +4,7 @@ import 'package:suits_app/core/utils/constants/app_colors.dart';
 import 'package:suits_app/core/utils/constants/app_dimensions.dart';
 import 'package:suits_app/core/utils/ui/app_bar.dart';
 import 'package:suits_app/features/home/presentation/widgets/category_field_widget.dart';
+import 'package:suits_app/features/home/presentation/widgets/flash_sale_widget.dart';
 import 'package:suits_app/features/home/presentation/widgets/new_collection_widget.dart';
 
 class HomeView extends StatelessWidget {
@@ -22,7 +23,7 @@ class HomeView extends StatelessWidget {
             child: Container(
               width: 40,
               height: 40,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 shape: BoxShape.circle,
                 color: Colors.white,
               ),
@@ -35,13 +36,15 @@ class HomeView extends StatelessWidget {
         ],
       ),
       backgroundColor: AppColors.scaffoldColor,
-      body: Padding(
+      body: const Padding(
         padding: AppDimensions.pagePadding,
         child: Column(
           children: [
             NewCollectionWidget(),
-            const SizedBox(height: AppDimensions.medium),
+            SizedBox(height: AppDimensions.medium),
             CategoryFieldWidget(),
+            SizedBox(height: AppDimensions.medium),
+            FlashSaleWidget(),
           ],
         ),
       ),

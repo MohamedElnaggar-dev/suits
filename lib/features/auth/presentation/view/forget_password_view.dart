@@ -17,7 +17,7 @@ class ForgetPasswordView extends StatelessWidget {
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         backgroundColor: AppColors.scaffoldColor,
-        appBar: CustomAppBar(isLeading: true),
+        appBar: const CustomAppBar(isLeading: true),
         body: SingleChildScrollView(
           child: Padding(
             padding: AppDimensions.pagePadding,

@@ -32,7 +32,7 @@ class _SplashViewState extends State<SplashView> {
       backgroundColor: showSecond ? Colors.black : Colors.white,
       body: AnimatedSwitcher(
         duration: const Duration(milliseconds: 700),
-        child: showSecond ? _SecondSplash() : _FirstSplash(),
+        child: showSecond ? const _SecondSplash() : const _FirstSplash(),
       ),
     );
   }
@@ -43,7 +43,7 @@ class _FirstSplash extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SplashContent(color: AppColors.primaryColor);
+    return const SplashContent(color: AppColors.primaryColor);
   }
 }
 
@@ -52,6 +52,6 @@ class _SecondSplash extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SplashContent(color: AppColors.secondSplashColor);
+    return const SplashContent(color: AppColors.secondSplashColor);
   }
 }
