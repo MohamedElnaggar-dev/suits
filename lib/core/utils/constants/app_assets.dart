@@ -10,6 +10,18 @@ class Assets {
   /// assets/images/bell.png
   static const String imagesBell = "assets/images/bell.png";
 
+  /// Assets for imagesBlackWomanSuits
+  /// assets/images/black_woman_suits.png
+  static const String imagesBlackWomanSuits = "assets/images/black_woman_suits.png";
+
+  /// Assets for imagesBlueBlackWomanSuit
+  /// assets/images/blue_black_woman_suit.png
+  static const String imagesBlueBlackWomanSuit = "assets/images/blue_black_woman_suit.png";
+
+  /// Assets for imagesBrownShirt
+  /// assets/images/brown_shirt.png
+  static const String imagesBrownShirt = "assets/images/brown_shirt.png";
+
   /// Assets for imagesEmail
   /// assets/images/email.png
   static const String imagesEmail = "assets/images/email.png";
@@ -29,6 +41,10 @@ class Assets {
   /// Assets for imagesGoogle
   /// assets/images/google.png
   static const String imagesGoogle = "assets/images/google.png";
+
+  /// Assets for imagesGrayWomanBlazer
+  /// assets/images/gray_woman_blazer.png
+  static const String imagesGrayWomanBlazer = "assets/images/gray_woman_blazer.png";
 
   /// Assets for imagesHidePassword
   /// assets/images/hide_password.png
