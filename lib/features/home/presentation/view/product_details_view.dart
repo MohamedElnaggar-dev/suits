@@ -18,11 +18,12 @@ class ProductDetailsView extends StatelessWidget {
           children: [
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.5,
-              child: Positioned.fill(
-                child: Image.asset(
-                  Assets.imagesBrownShirt,
-                  fit: BoxFit.fitHeight,
+              child: ClipRRect(
+                borderRadius: const BorderRadius.only(
+                  topLeft: Radius.circular(32),
+                  topRight: Radius.circular(32),
                 ),
+                child: Image.asset(Assets.imagesBrownShirt, fit: BoxFit.cover),
               ),
             ),
             Align(

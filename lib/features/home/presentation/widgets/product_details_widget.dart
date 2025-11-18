@@ -3,6 +3,7 @@ import 'package:suits_app/core/utils/constants/app_assets.dart';
 import 'package:suits_app/core/utils/constants/app_dimensions.dart';
 import 'package:suits_app/core/utils/constants/app_styles.dart';
 import 'package:suits_app/core/utils/ui/app_button.dart';
+import 'package:suits_app/features/home/presentation/widgets/add_to_favourite_widget.dart';
 import 'package:suits_app/features/home/presentation/widgets/product_color_widget.dart';
 import 'package:suits_app/features/home/presentation/widgets/product_size_widget.dart';
 
@@ -52,7 +53,11 @@ class ProductDetailsWidget extends StatelessWidget {
           const ProductSizewidget(),
           const SizedBox(height: AppDimensions.medium),
           Row(
-            children: [AppButton(text: 'Add to Cart', onTap: () {})],
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              const AddToFavouriteWidget(),
+              AppButton(text: 'Add to Cart', onTap: () {}),
+            ],
           ),
         ],
       ),

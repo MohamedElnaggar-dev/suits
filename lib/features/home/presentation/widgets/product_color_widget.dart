@@ -72,7 +72,7 @@ Widget productColorItem({
         decoration: BoxDecoration(
           color: color,
           shape: BoxShape.circle,
-          border: Border.all(color: Colors.black.withOpacity(0.2), width: 1),
+          border: Border.all(color: Colors.black, width: 1),
         ),
       ),
     ),

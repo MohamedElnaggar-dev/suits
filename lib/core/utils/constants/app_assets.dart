@@ -46,6 +46,10 @@ class Assets {
   /// assets/images/gray_woman_blazer.png
   static const String imagesGrayWomanBlazer = "assets/images/gray_woman_blazer.png";
 
+  /// Assets for imagesHeart
+  /// assets/images/heart.png
+  static const String imagesHeart = "assets/images/heart.png";
+
   /// Assets for imagesHidePassword
   /// assets/images/hide_password.png
   static const String imagesHidePassword = "assets/images/hide_password.png";
@@ -74,6 +78,10 @@ class Assets {
   /// assets/images/second_onboarding_background.jpg
   static const String imagesSecondOnboardingBackground = "assets/images/second_onboarding_background.jpg";
 
+  /// Assets for imagesSelectedHeart
+  /// assets/images/selected_heart.png
+  static const String imagesSelectedHeart = "assets/images/selected_heart.png";
+
   /// Assets for imagesShirtCategoryIcon
   /// assets/images/shirt_category_icon.png
   static const String imagesShirtCategoryIcon = "assets/images/shirt_category_icon.png";
@@ -93,6 +101,10 @@ class Assets {
   /// Assets for imagesThirdOnboardingBackground
   /// assets/images/third_onboarding_background.jpg
   static const String imagesThirdOnboardingBackground = "assets/images/third_onboarding_background.jpg";
+
+  /// Assets for imagesUnselectedHeart
+  /// assets/images/unselected_heart.png
+  static const String imagesUnselectedHeart = "assets/images/unselected_heart.png";
 
   /// Assets for imagesUserIcon
   /// assets/images/user_icon.png
