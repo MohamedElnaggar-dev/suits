@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "906417198144",
+    "project_id": "suits-app-f4769",
+    "storage_bucket": "suits-app-f4769.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:906417198144:android:a2a692fff4a93138d37ba5",
+        "android_client_info": {
+          "package_name": "com.example.suits_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBtcXIQuiNfHLiKUif4GKj4bNHyOUK9hSY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
