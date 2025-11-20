@@ -16,18 +16,14 @@ class FirebaseAuthService {
       final UserCredential userCredential = await firebaseAuth
           .createUserWithEmailAndPassword(email: email, password: password);
 
-      User user = userCredential.user!;
+      final user = userCredential.user;
+      if (user == null) {
+        throw CustomException(errMessage: 'User creation failed.');
+      }
 
       await firebaseFirestore.collection('users').doc(user.uid).set({
         'uid': user.uid,
         'name': name,
-        'email': user.email,
-      });
-      await user.updateDisplayName(name);
-      await user.reload();
-      await firebaseFirestore.collection('users').doc(user.uid).set({
-        'uid': user.uid,
-        'name': user.displayName,
         'email': user.email,
       });
       await LocalStorageService.saveUserData(
@@ -54,7 +50,8 @@ class FirebaseAuthService {
           );
         default:
           throw CustomException(
-            errMessage: e.message ?? 'Unknown FirebaseAuth error.',
+            errMessage:
+                e.message ?? 'there was an error occurred from firebase.',
           );
       }
     } catch (e) {
