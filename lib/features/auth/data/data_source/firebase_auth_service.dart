@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:suits_app/core/utils/error_handeling/custom_excption.dart';
+import 'package:suits_app/features/auth/data/data_source/local_storage_service.dart';
 
 class FirebaseAuthService {
   final FirebaseAuth firebaseAuth = FirebaseAuth.instance;
@@ -20,15 +21,20 @@ class FirebaseAuthService {
       await firebaseFirestore.collection('users').doc(user.uid).set({
         'uid': user.uid,
         'name': name,
-        'email': email,
+        'email': user.email,
       });
       await user.updateDisplayName(name);
       await user.reload();
       await firebaseFirestore.collection('users').doc(user.uid).set({
         'uid': user.uid,
-        'name': name,
-        'email': email,
+        'name': user.displayName,
+        'email': user.email,
       });
+      await LocalStorageService.saveUserData(
+        uid: user.uid,
+        email: user.email!,
+        name: name,
+      );
       return user;
     } on FirebaseAuthException catch (e) {
       switch (e.code) {

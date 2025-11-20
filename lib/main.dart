@@ -1,11 +1,14 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:suits_app/core/utils/router/app_routes.dart';
+import 'package:suits_app/features/auth/data/data_source/local_storage_service.dart';
 import 'package:suits_app/firebase_options.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  await LocalStorageService.init();
+
   runApp(const SuitsApp());
 }
 
