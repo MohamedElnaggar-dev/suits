@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:suits_app/core/di/get_it.dart';
+import 'package:suits_app/features/auth/presentation/manger/signup_cubit/signup_cubit.dart';
 import 'package:suits_app/features/auth/presentation/view/create_new_password_view.dart';
 import 'package:suits_app/features/auth/presentation/view/forget_password_view.dart';
 import 'package:suits_app/features/auth/presentation/view/login_view.dart';
@@ -43,7 +46,10 @@ abstract class AppRouter {
       GoRoute(path: kLoginView, builder: (context, state) => const LoginView()),
       GoRoute(
         path: kSignupView,
-        builder: (context, state) => const SignupView(),
+        builder: (context, state) => BlocProvider(
+          create: (context) => getIt<SignupCubit>(),
+          child: const SignupView(),
+        ),
       ),
       GoRoute(
         path: kForgetPasswordView,

@@ -1,4 +1,4 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:suits_app/core/utils/constants/app_colors.dart';
 import 'package:suits_app/core/utils/constants/app_dimensions.dart';
@@ -37,7 +37,7 @@ class AppButton extends StatelessWidget {
           ),
           child: Center(
             child: isLoading
-                ? const CircularProgressIndicator(color: Colors.white)
+                ? const CupertinoActivityIndicator(color: Colors.white)
                 : Text(
                     text,
                     style: AppStyles.semiBold(

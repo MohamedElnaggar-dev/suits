@@ -21,9 +21,10 @@ class _TermsAndConditionsState extends State<TermsAndConditions> {
         CustomCheckBox(
           isCheck: isCheck,
           onChecked: (bool value) {
-            isCheck = value;
-            widget.changed(value);
-            setState(() {});
+            setState(() {
+              isCheck = value;
+              widget.changed(value);
+            });
           },
         ),
         const SizedBox(width: 8),

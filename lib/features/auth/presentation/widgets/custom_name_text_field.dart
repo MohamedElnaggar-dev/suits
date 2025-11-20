@@ -11,7 +11,7 @@ class CustomNameTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomTextField(
       controller: controller,
-      hintText: 'Enter your Email',
+      hintText: 'Enter your Name',
       prefixIcon: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
         child: Image.asset(Assets.imagesUserIcon, width: 24, height: 24),
