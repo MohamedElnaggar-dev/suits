@@ -58,4 +58,45 @@ class FirebaseAuthService {
       throw CustomException(errMessage: e.toString());
     }
   }
+
+  Future<User> signinWithEmailAndPassword({
+    required String email,
+    required String password,
+  }) async {
+    try {
+      final UserCredential userCredential = await firebaseAuth
+          .signInWithEmailAndPassword(email: email, password: password);
+      final user = userCredential.user;
+      if (user == null) {
+        throw CustomException(errMessage: 'User sign in failed.');
+      }
+      await firebaseFirestore.collection('users').doc(user.uid).set({
+        'uid': user.uid,
+        'email': user.email,
+        'name': user.displayName ?? '',
+        'createdAt': FieldValue.serverTimestamp(),
+      }, SetOptions(merge: true));
+
+      return user;
+    } on FirebaseAuthException catch (e) {
+      switch (e.code) {
+        case 'invalid-email':
+          throw CustomException(errMessage: 'The email address is invalid.');
+        case 'user-disabled':
+          throw CustomException(
+            errMessage: 'This user account has been disabled.',
+          );
+        case 'user-not-found':
+          throw CustomException(errMessage: 'No user found for that email.');
+        case 'wrong-password':
+          throw CustomException(errMessage: 'Wrong password provided.');
+        default:
+          throw CustomException(
+            errMessage: e.message ?? 'Unknown FirebaseAuth error.',
+          );
+      }
+    } catch (e) {
+      throw CustomException(errMessage: e.toString());
+    }
+  }
 }

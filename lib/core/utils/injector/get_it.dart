@@ -5,25 +5,27 @@ import 'package:suits_app/features/auth/domain/repo/auth_repo.dart';
 import 'package:suits_app/features/auth/domain/usecase/register_user_use_case.dart';
 import 'package:suits_app/features/auth/presentation/manger/signup_cubit/signup_cubit.dart';
 
-final getIt = GetIt.instance;
+final injector = GetIt.instance;
 
 Future<void> setupLocator() async {
   /// Services
 
-  getIt.registerLazySingleton<FirebaseAuthService>(() => FirebaseAuthService());
+  injector.registerLazySingleton<FirebaseAuthService>(
+    () => FirebaseAuthService(),
+  );
 
   ///  Repositories
-  getIt.registerLazySingleton<AuthRepo>(
-    () => AuthRepoImpl(getIt<FirebaseAuthService>()),
+  injector.registerLazySingleton<AuthRepo>(
+    () => AuthRepoImpl(injector<FirebaseAuthService>()),
   );
 
   /// useCases
-  getIt.registerLazySingleton<RegisterUserUseCase>(
-    () => RegisterUserUseCase(authRepo: getIt<AuthRepo>()),
+  injector.registerLazySingleton<RegisterUserUseCase>(
+    () => RegisterUserUseCase(authRepo: injector<AuthRepo>()),
   );
 
   /// Blocs / Cubits
-  getIt.registerFactory<SignupCubit>(
-    () => SignupCubit(getIt<RegisterUserUseCase>()),
+  injector.registerFactory<SignupCubit>(
+    () => SignupCubit(injector<RegisterUserUseCase>()),
   );
 }

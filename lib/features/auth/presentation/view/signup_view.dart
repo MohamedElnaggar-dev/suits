@@ -80,7 +80,6 @@ class _SignupViewState extends State<SignupView> {
                       AppButton(
                         isLoading: state is SignupLoading,
                         onTap: () {
-                          print(change);
                           if (_formKey.currentState!.validate()) {
                             if (change == false) {
                               ScaffoldMessenger.of(context).showSnackBar(
