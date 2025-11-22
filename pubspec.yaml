@@ -42,6 +42,7 @@ dependencies:
   go_router: ^17.0.0
   google_sign_in: ^7.2.0
   hive_flutter: ^1.1.0
+  mailer: ^6.6.0
   pin_code_fields: null
   skeletonizer: ^2.1.0+1
   smooth_page_indicator: ^1.2.1
