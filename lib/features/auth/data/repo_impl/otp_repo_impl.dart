@@ -21,4 +21,9 @@ class OtpRepoImpl implements OtpRepo {
   }) async {
     return otpService.verifyOtp(uid, enteredOtp);
   }
+
+  @override
+  Future<bool> canResendOtp({required String uid}) async {
+    return otpService.canResendOtp(uid);
+  }
 }
