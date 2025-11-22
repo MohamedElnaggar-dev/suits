@@ -13,4 +13,12 @@ class OtpRepoImpl implements OtpRepo {
     await otpService.saveOtp(uid, otp);
     await otpService.sendOtpToEmail(email, otp);
   }
+
+  @override
+  Future<bool> verifyOtp({
+    required String uid,
+    required String enteredOtp,
+  }) async {
+    return otpService.verifyOtp(uid, enteredOtp);
+  }
 }
