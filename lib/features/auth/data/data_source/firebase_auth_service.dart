@@ -112,6 +112,7 @@ class FirebaseAuthService {
       if (user == null) {
         throw CustomException(errMessage: 'No user is currently signed in.');
       }
+
       await user.updatePassword(newPassword);
     } on FirebaseAuthException catch (e) {
       throw CustomException(
