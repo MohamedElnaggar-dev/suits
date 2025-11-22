@@ -71,9 +71,6 @@ class FirebaseAuthService {
         throw CustomException(errMessage: 'User sign in failed.');
       }
       await firebaseFirestore.collection('users').doc(user.uid).set({
-        'uid': user.uid,
-        'email': user.email,
-        'name': user.displayName ?? '',
         'createdAt': FieldValue.serverTimestamp(),
       }, SetOptions(merge: true));
 
@@ -95,6 +92,31 @@ class FirebaseAuthService {
             errMessage: e.message ?? 'Unknown FirebaseAuth error.',
           );
       }
+    } catch (e) {
+      throw CustomException(errMessage: e.toString());
+    }
+  }
+
+  // Future<void> signOut() async {
+  //   try {
+  //     await firebaseAuth.signOut();
+  //     await LocalStorageService.clearUserData();
+  //   } catch (e) {
+  //     throw CustomException(errMessage: 'Sign out failed: ${e.toString()}');
+  //   }
+  // }
+
+  Future<void> forgetPassword({required String newPassword}) async {
+    try {
+      final user = firebaseAuth.currentUser;
+      if (user == null) {
+        throw CustomException(errMessage: 'No user is currently signed in.');
+      }
+      await user.updatePassword(newPassword);
+    } on FirebaseAuthException catch (e) {
+      throw CustomException(
+        errMessage: e.message ?? 'Failed to update password.',
+      );
     } catch (e) {
       throw CustomException(errMessage: e.toString());
     }

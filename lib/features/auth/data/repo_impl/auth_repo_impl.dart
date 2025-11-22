@@ -47,6 +47,11 @@ class AuthRepoImpl implements AuthRepo {
       );
 
       UserModel userModel = UserModel.fromFireBase(user);
+      userModel = UserModel(
+        email: userModel.email,
+        name: userModel.name,
+        uId: userModel.uId,
+      );
       return Right(userModel.toEntity());
     } on CustomException catch (e) {
       return Left(CustomFailure(errMessage: e.errMessage));
