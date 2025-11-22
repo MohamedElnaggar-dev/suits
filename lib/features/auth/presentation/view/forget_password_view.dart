@@ -37,20 +37,18 @@ class _ForgetPasswordViewState extends State<ForgetPasswordView> {
       child: Scaffold(
         backgroundColor: AppColors.scaffoldColor,
         appBar: const CustomAppBar(isLeading: true),
-        body: Form(
-          key: _formKey,
-          child: BlocConsumer<OtpCubit, OtpState>(
-            listener: (context, state) {
-              if (state is OtpSentSuccess) {
-                context.push(AppRouter.kVerificationCodeView);
-              } else if (state is OtpFailure) {
-                ScaffoldMessenger.of(
-                  context,
-                ).showSnackBar(SnackBar(content: Text(state.errorMessage)));
-              }
-            },
-            builder: (context, state) {
-              return SingleChildScrollView(
+        body: BlocConsumer<OtpCubit, OtpState>(
+          listener: (context, state) {
+            if (state is OtpSentSuccess) {
+              context.push(AppRouter.kVerificationCodeView);
+            } else if (state is OtpFailure) {
+              showSnakBar(context, state.errorMessage, isError: true);
+            }
+          },
+          builder: (context, state) {
+            return Form(
+              key: _formKey,
+              child: SingleChildScrollView(
                 child: Padding(
                   padding: AppDimensions.pagePadding,
                   child: Column(
@@ -75,12 +73,21 @@ class _ForgetPasswordViewState extends State<ForgetPasswordView> {
                         isLoading: state is OtpLoading,
                         onTap: () {
                           if (_formKey.currentState!.validate()) {
+                            _formKey.currentState!.save();
                             final email = emailController.text.trim();
                             final user = auth.currentUser;
                             if (user == null) {
                               showSnakBar(
                                 context,
                                 'No user is currently signed in.',
+                                isError: true,
+                              );
+                              return;
+                            }
+                            if (email.isEmpty) {
+                              showSnakBar(
+                                context,
+                                'Please enter your email address.',
                                 isError: true,
                               );
                               return;
@@ -93,6 +100,7 @@ class _ForgetPasswordViewState extends State<ForgetPasswordView> {
                               );
                               return;
                             }
+
                             context.read<OtpCubit>().sendOtpToEmail(
                               email: email,
                               uid: user.uid,
@@ -105,9 +113,9 @@ class _ForgetPasswordViewState extends State<ForgetPasswordView> {
                     ],
                   ),
                 ),
-              );
-            },
-          ),
+              ),
+            );
+          },
         ),
       ),
     );

@@ -13,7 +13,6 @@ import 'package:suits_app/core/utils/ui/app_button.dart';
 import 'package:suits_app/core/utils/ui/show_snak_bar.dart';
 import 'package:suits_app/features/auth/presentation/manger/otp_cubit/otp_cubit.dart';
 import 'package:suits_app/features/auth/presentation/widgets/custom_pin_code_text_field.dart';
-import 'package:suits_app/features/auth/presentation/widgets/custom_text.dart';
 
 class VerificationCodeView extends StatefulWidget {
   const VerificationCodeView({super.key});
@@ -43,6 +42,18 @@ class _VerificationCodeViewState extends State<VerificationCodeView> {
         });
       }
     });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    startTimer();
+  }
+
+  @override
+  void dispose() {
+    _timer?.cancel();
+    super.dispose();
   }
 
   @override
@@ -100,30 +111,25 @@ class _VerificationCodeViewState extends State<VerificationCodeView> {
                         text: 'Verify',
                       ),
                       const SizedBox(height: AppDimensions.medium),
-                      const Center(
-                        child: CustomText(
-                          blackText: 'Didn’t receive the code?',
-                          primaryColorText: ' Resend',
-                        ),
-                      ),
+
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           GestureDetector(
                             onTap: secondsLeft == 0
                                 ? () {
+                                    startTimer();
                                     context.read<OtpCubit>().sendOtpToEmail(
                                       email: auth.currentUser!.email!,
                                       uid: auth.currentUser!.uid,
                                     );
-                                    startTimer();
                                   }
                                 : null,
                             child: Text(
-                              "أعد ارسال الرمز ؟",
+                              'Resend Code',
                               style: TextStyle(
                                 color: secondsLeft == 0
-                                    ? Colors.blue
+                                    ? AppColors.primaryColor
                                     : Colors.grey,
                                 fontSize: 16,
                               ),

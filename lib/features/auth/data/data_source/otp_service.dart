@@ -62,7 +62,7 @@ class OtpService {
   Future<void> sendOtpToEmail(String email, String otp) async {
     final smtpServer = gmail(
       'mohamedelnaggarn@gmail.com',
-      'gakr kkld eebr awww',
+      'oztm klor paxi rthj',
     );
 
     final message = Message()
