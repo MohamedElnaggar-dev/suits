@@ -2,8 +2,10 @@ import 'package:get_it/get_it.dart';
 import 'package:suits_app/features/auth/data/data_source/firebase_auth_service.dart';
 import 'package:suits_app/features/auth/data/repo_impl/auth_repo_impl.dart';
 import 'package:suits_app/features/auth/domain/repo/auth_repo.dart';
+import 'package:suits_app/features/auth/domain/usecase/forget_password_usecase.dart';
 import 'package:suits_app/features/auth/domain/usecase/register_user_use_case.dart';
 import 'package:suits_app/features/auth/domain/usecase/signin_use_case.dart';
+import 'package:suits_app/features/auth/presentation/manger/forget_password_cubit/forget_password_cubit.dart';
 import 'package:suits_app/features/auth/presentation/manger/signin_cubit/signin_cubit.dart';
 import 'package:suits_app/features/auth/presentation/manger/signup_cubit/signup_cubit.dart';
 
@@ -30,6 +32,10 @@ Future<void> setupLocator() async {
     () => SigninUseCase(authRepo: injector<AuthRepo>()),
   );
 
+  injector.registerLazySingleton<ForgetPasswordUseCase>(
+    () => ForgetPasswordUseCase(authRepo: injector<AuthRepo>()),
+  );
+
   /// Blocs / Cubits
   injector.registerFactory<SignupCubit>(
     () => SignupCubit(injector<RegisterUserUseCase>()),
@@ -37,5 +43,9 @@ Future<void> setupLocator() async {
 
   injector.registerFactory<SigninCubit>(
     () => SigninCubit(injector<SigninUseCase>()),
+  );
+
+  injector.registerFactory<ForgetPasswordCubit>(
+    () => ForgetPasswordCubit(injector<ForgetPasswordUseCase>()),
   );
 }
