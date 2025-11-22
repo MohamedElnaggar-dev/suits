@@ -12,6 +12,14 @@ class CustomPinCodeTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return PinCodeTextField(
+      validator: (value) {
+        if (value == null || value.length != 4) {
+          return 'Please enter a valid 4-digit code.';
+        } else if (value.isEmpty) {
+          return 'This field cannot be empty.';
+        }
+        return null;
+      },
       appContext: context,
       length: 4,
       keyboardType: TextInputType.number,

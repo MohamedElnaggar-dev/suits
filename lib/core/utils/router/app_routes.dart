@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:suits_app/core/utils/injector/get_it.dart';
+import 'package:suits_app/features/auth/presentation/manger/forget_password_cubit/forget_password_cubit.dart';
+import 'package:suits_app/features/auth/presentation/manger/otp_cubit/otp_cubit.dart';
 import 'package:suits_app/features/auth/presentation/manger/signin_cubit/signin_cubit.dart';
 import 'package:suits_app/features/auth/presentation/manger/signup_cubit/signup_cubit.dart';
 import 'package:suits_app/features/auth/presentation/view/create_new_password_view.dart';
@@ -60,15 +62,24 @@ abstract class AppRouter {
       ),
       GoRoute(
         path: kForgetPasswordView,
-        builder: (context, state) => const ForgetPasswordView(),
+        builder: (context, state) => BlocProvider(
+          create: (context) => injector<OtpCubit>(),
+          child: const ForgetPasswordView(),
+        ),
       ),
       GoRoute(
         path: kVerificationCodeView,
-        builder: (context, state) => const VerificationCodeView(),
+        builder: (context, state) => BlocProvider(
+          create: (context) => injector<OtpCubit>(),
+          child: const VerificationCodeView(),
+        ),
       ),
       GoRoute(
         path: kCreateNewPasswordView,
-        builder: (context, state) => const CreateNewPasswordView(),
+        builder: (context, state) => BlocProvider(
+          create: (context) => injector<ForgetPasswordCubit>(),
+          child: const CreateNewPasswordView(),
+        ),
       ),
       GoRoute(
         path: kProductDetailsView,
