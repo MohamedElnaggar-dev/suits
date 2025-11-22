@@ -57,4 +57,16 @@ class AuthRepoImpl implements AuthRepo {
       return Left(CustomFailure(errMessage: e.errMessage));
     }
   }
+
+  @override
+  Future<Either<CustomFailure, Unit>> forgetPassword({
+    required String newPassword,
+  }) async {
+    try {
+      await firebaseAuthService.forgetPassword(newPassword: newPassword);
+      return const Right(unit);
+    } on CustomException catch (e) {
+      return Left(CustomFailure(errMessage: e.errMessage));
+    }
+  }
 }
