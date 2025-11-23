@@ -1,15 +1,15 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:suits_app/core/utils/constants/app_assets.dart';
 import 'package:suits_app/core/utils/constants/app_colors.dart';
 
-class AddToFavouriteWidget extends StatefulWidget {
-  const AddToFavouriteWidget({super.key});
+class BackToHomeWidget extends StatefulWidget {
+  const BackToHomeWidget({super.key});
 
   @override
-  State<AddToFavouriteWidget> createState() => _AddToFavouriteWidgetState();
+  State<BackToHomeWidget> createState() => _BackToHomeWidgetState();
 }
 
-class _AddToFavouriteWidgetState extends State<AddToFavouriteWidget> {
+class _BackToHomeWidgetState extends State<BackToHomeWidget> {
   bool isSelected = false;
   @override
   Widget build(BuildContext context) {
@@ -26,11 +26,8 @@ class _AddToFavouriteWidgetState extends State<AddToFavouriteWidget> {
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: isSelected == false
-              ? Image.asset(
-                  Assets.imagesUnselectedHeart,
-                  color: Colors.grey.shade300,
-                )
-              : Image.asset(Assets.imagesSelectedHeart),
+              ? const Icon(CupertinoIcons.home, color: Colors.grey)
+              : const Icon(CupertinoIcons.home, color: AppColors.primaryColor),
         ),
       ),
     );
