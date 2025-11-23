@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:suits_app/core/utils/constants/app_assets.dart';
 import 'package:suits_app/core/utils/constants/app_styles.dart';
+import 'package:suits_app/features/cart/presentation/widgets/quantity_item.dart';
 
 class CartItem extends StatelessWidget {
   const CartItem({super.key});
@@ -32,6 +33,8 @@ class CartItem extends StatelessWidget {
             ),
           ],
         ),
+
+        const QuantityItem(),
       ],
     );
   }
