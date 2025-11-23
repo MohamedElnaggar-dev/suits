@@ -11,6 +11,7 @@ import 'package:suits_app/features/auth/presentation/view/forget_password_view.d
 import 'package:suits_app/features/auth/presentation/view/login_view.dart';
 import 'package:suits_app/features/auth/presentation/view/signup_view.dart';
 import 'package:suits_app/features/auth/presentation/view/verification_code_view.dart';
+import 'package:suits_app/features/cart/presentation/views/cart_view.dart';
 import 'package:suits_app/features/get_started/presentation/view/get_started_view.dart';
 import 'package:suits_app/features/home/presentation/view/home_view.dart';
 import 'package:suits_app/features/home/presentation/view/product_details_view.dart';
@@ -103,8 +104,7 @@ abstract class AppRouter {
             routes: [
               GoRoute(
                 path: kExploreView,
-                builder: (context, state) =>
-                    const Scaffold(body: Center(child: Text('Explore'))),
+                builder: (context, state) => const CartView(),
               ),
             ],
           ),

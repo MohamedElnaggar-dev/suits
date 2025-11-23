@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:suits_app/core/utils/constants/app_assets.dart';
 import 'package:suits_app/core/utils/constants/app_dimensions.dart';
 import 'package:suits_app/core/utils/constants/app_styles.dart';
+import 'package:suits_app/core/utils/router/app_routes.dart';
 import 'package:suits_app/core/utils/ui/app_button.dart';
 import 'package:suits_app/features/home/presentation/widgets/back_to_home_widget.dart';
 import 'package:suits_app/features/home/presentation/widgets/product_color_widget.dart';
@@ -55,7 +57,12 @@ class ProductDetailsWidget extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const BackToHomeWidget(),
+              GestureDetector(
+                onTap: () {
+                  context.go(AppRouter.kHomeView);
+                },
+                child: const BackToHomeWidget(),
+              ),
               AppButton(text: 'Add to Cart', onTap: () {}),
             ],
           ),
