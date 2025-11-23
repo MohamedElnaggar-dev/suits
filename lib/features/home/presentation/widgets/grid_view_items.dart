@@ -1,20 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import 'package:suits_app/core/utils/constants/app_assets.dart';
-import 'package:suits_app/core/utils/router/app_routes.dart';
 import 'package:suits_app/features/home/presentation/widgets/product_item.dart';
 
 class GridViewItems extends StatelessWidget {
-  const GridViewItems({super.key});
+  const GridViewItems({
+    super.key,
+    this.onTap,
+    required this.images,
+    required this.productName,
+    required this.price,
+    required this.rating,
+  });
+  final void Function(int index)? onTap;
+  final List<String> images;
+  final String productName;
+  final String price;
+  final String rating;
 
   @override
   Widget build(BuildContext context) {
-    List<String> images = [
-      Assets.imagesBlackWomanSuits,
-      Assets.imagesBrownShirt,
-      Assets.imagesGrayWomanBlazer,
-      Assets.imagesBlueBlackWomanSuit,
-    ];
     return GridView.builder(
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
@@ -27,14 +30,13 @@ class GridViewItems extends StatelessWidget {
       itemCount: images.length,
       itemBuilder: (context, index) {
         return GestureDetector(
-          onTap: () {
-            context.push(AppRouter.kProductDetailsView);
-          },
+          onTap: () => onTap!(index),
+
           child: ProductItem(
             image: images[index],
-            productName: 'Product Name',
-            price: '\$83.97',
-            rating: ' 4.5',
+            productName: productName,
+            price: price,
+            rating: rating,
           ),
         );
       },
