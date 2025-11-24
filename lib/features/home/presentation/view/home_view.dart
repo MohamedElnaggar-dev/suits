@@ -37,7 +37,7 @@ class _HomeViewState extends State<HomeView> {
       appBar: CustomAppBar(
         centerTitle: false,
         isLeading: false,
-        title: 'Hello User',
+        title: 'Hello mohamed',
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 16),
