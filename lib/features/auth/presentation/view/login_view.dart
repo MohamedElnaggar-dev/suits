@@ -6,9 +6,12 @@ import 'package:suits_app/core/utils/constants/app_assets.dart';
 import 'package:suits_app/core/utils/constants/app_colors.dart';
 import 'package:suits_app/core/utils/constants/app_dimensions.dart';
 import 'package:suits_app/core/utils/constants/app_styles.dart';
+import 'package:suits_app/core/utils/injector/get_it.dart';
 import 'package:suits_app/core/utils/router/app_routes.dart';
 import 'package:suits_app/core/utils/ui/app_bar.dart';
 import 'package:suits_app/core/utils/ui/app_button.dart';
+import 'package:suits_app/core/utils/ui/show_snak_bar.dart';
+import 'package:suits_app/features/auth/presentation/manger/sign_in_with_google_cubit/sign_in_with_google_cubit.dart';
 import 'package:suits_app/features/auth/presentation/manger/signin_cubit/signin_cubit.dart';
 import 'package:suits_app/features/auth/presentation/widgets/custom_divider.dart';
 import 'package:suits_app/features/auth/presentation/widgets/custom_email_text_field.dart';
@@ -135,9 +138,9 @@ class _LoginViewState extends State<LoginView> {
                       const CustomDivider(),
                       const SizedBox(height: 30),
 
-                      const CustomLoginWithAccouts(
-                        image: Assets.imagesGoogle,
-                        text: 'Sign in with google',
+                      BlocProvider(
+                        create: (context) => injector<SignInWithGoogleCubit>(),
+                        child: const SigninWithGoogle(),
                       ),
                       const SizedBox(height: AppDimensions.medium),
                       const CustomLoginWithAccouts(
@@ -158,6 +161,33 @@ class _LoginViewState extends State<LoginView> {
           ),
         ),
       ),
+    );
+  }
+}
+
+class SigninWithGoogle extends StatelessWidget {
+  const SigninWithGoogle({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocConsumer<SignInWithGoogleCubit, SignInWithGoogleState>(
+      listener: (context, state) {
+        if (state is SignInWithGoogleSuccess) {
+          context.go(AppRouter.kHomeView);
+        } else if (state is SignInWithGoogleFailure) {
+          showSnakBar(context, state.errorMessage);
+        }
+      },
+      builder: (context, state) {
+        return CustomLoginWithAccouts(
+          image: Assets.imagesGoogle,
+          text: 'Sign in with google',
+          onTap: () {
+            context.read<SignInWithGoogleCubit>().signInWithGoogle();
+          },
+          isLoading: state is SignInWithGoogleLoading ? true : false,
+        );
+      },
     );
   }
 }

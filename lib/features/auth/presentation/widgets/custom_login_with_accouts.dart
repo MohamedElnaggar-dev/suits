@@ -1,4 +1,5 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'package:suits_app/core/utils/constants/app_colors.dart';
@@ -11,10 +12,12 @@ class CustomLoginWithAccouts extends StatelessWidget {
     required this.text,
     required this.image,
     this.onTap,
+    this.isLoading = false,
   });
   final String text;
   final String image;
   final void Function()? onTap;
+  final bool isLoading;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -35,7 +38,17 @@ class CustomLoginWithAccouts extends StatelessWidget {
               child: Image.asset(image, width: 24, height: 24),
             ),
             const SizedBox(width: 24),
-            Text(text, style: AppStyles.semiBold(fontSize: 16)),
+            Center(
+              child: isLoading
+                  ? const CupertinoActivityIndicator(color: Colors.white)
+                  : Text(
+                      text,
+                      style: AppStyles.semiBold(
+                        fontSize: 16,
+                        color: Colors.black,
+                      ),
+                    ),
+            ),
           ],
         ),
       ),
