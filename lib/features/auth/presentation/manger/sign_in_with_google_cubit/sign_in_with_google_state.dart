@@ -8,3 +8,16 @@ sealed class SignInWithGoogleState extends Equatable {
 }
 
 final class SignInWithGoogleInitial extends SignInWithGoogleState {}
+
+final class SignInWithGoogleLoading extends SignInWithGoogleState {}
+
+final class SignInWithGoogleSuccess extends SignInWithGoogleState {}
+
+final class SignInWithGoogleFailure extends SignInWithGoogleState {
+  final String errorMessage;
+
+  const SignInWithGoogleFailure(this.errorMessage);
+
+  @override
+  List<Object> get props => [errorMessage];
+}
