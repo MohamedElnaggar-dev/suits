@@ -69,4 +69,14 @@ class AuthRepoImpl implements AuthRepo {
       return Left(CustomFailure(errMessage: e.errMessage));
     }
   }
+
+  @override
+  Future<Either<CustomFailure, Unit>> signInWithGoogle() async {
+    try {
+      await firebaseAuthService.signInWithGoogle();
+      return const Right(unit);
+    } on CustomException catch (e) {
+      return Left(CustomFailure(errMessage: e.errMessage));
+    }
+  }
 }
